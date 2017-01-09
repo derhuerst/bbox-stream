@@ -10,5 +10,13 @@
 	"repository":  "derhuerst/bbox-stream",
 	"bugs":        "https://github.com/derhuerst/bbox-stream/issues",
 	"license":     "ISC",
-	"engines":     {"node": ">= 6"}
+	"engines":     {"node": ">= 6"},
+	"devDependencies": {
+		"stream-sink": "^2.0.0",
+		"is-stream": "^1.1.0"
+	},
+	"scripts": {
+		"test": "node test.js",
+		"prepublish": "npm test"
+	}
 }
