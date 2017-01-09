@@ -1,0 +1,14 @@
+{
+	"name":        "bbox-stream",
+	"description": "A stream of coordinates withing a bounding box.",
+	"version":     "0.1.0",
+	"main":        "index.js",
+	"files":       ["index.js"],
+	"keywords":    ["stream", "bbox", "bounding box", "coordinates", "map"],
+	"author":      "Jannis R <mail@jannisr.de>",
+	"homepage":    "https://github.com/derhuerst/bbox-stream",
+	"repository":  "derhuerst/bbox-stream",
+	"bugs":        "https://github.com/derhuerst/bbox-stream/issues",
+	"license":     "ISC",
+	"engines":     {"node": ">= 6"}
+}
