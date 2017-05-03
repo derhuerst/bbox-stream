@@ -12,7 +12,7 @@
 	"license":     "ISC",
 	"engines":     {"node": ">= 6"},
 	"devDependencies": {
-		"stream-sink": "^2.0.0",
+		"stream-sink": "^2.1.0",
 		"is-stream": "^1.1.0"
 	},
 	"scripts": {
