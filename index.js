@@ -9,7 +9,7 @@ const round = (x, s) => {
 }
 
 const TileGenerator = function (bbox, step) {
-	if (process.env !== 'production') {
+	if (process.env.NODE_ENV !== 'production') {
 		if (!Array.isArray(bbox)) throw new Error('bbox must be an array')
 		if ('number' !== typeof bbox[0]) throw new Error('bbox[0] must be a number')
 		if ('number' !== typeof bbox[1]) throw new Error('bbox[1] must be a number')

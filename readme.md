@@ -1,6 +1,6 @@
 # bbox-stream
 
-**A stream of coordinates withing a bounding box.**
+**A stream of coordinates within a bounding box.**
 
 ```js
 const coords = require('bbox-stream')
@@ -12,6 +12,7 @@ coords([52.4, 13.4, 52.6, 13.6], .1).pipe(…)
 [![dependency status](https://img.shields.io/david/derhuerst/bbox-stream.svg)](https://david-dm.org/derhuerst/bbox-stream#info=dependencies)
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/bbox-stream.svg)](https://david-dm.org/derhuerst/bbox-stream#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/bbox-stream.svg)
+[![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
 
 
 ## Installing
