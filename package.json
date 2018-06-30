@@ -5,9 +5,17 @@
 	"main":        "index.js",
 	"files": [
 		"index.js",
+		"callbag.js",
 		"lib"
 	],
-	"keywords":    ["stream", "bbox", "bounding box", "coordinates", "map"],
+	"keywords": [
+		"stream",
+		"bbox",
+		"bounding box",
+		"coordinates",
+		"map",
+		"callbag"
+	],
 	"author":      "Jannis R <mail@jannisr.de>",
 	"homepage":    "https://github.com/derhuerst/bbox-stream",
 	"repository":  "derhuerst/bbox-stream",
@@ -15,6 +23,8 @@
 	"license":     "ISC",
 	"engines":     {"node": ">= 6"},
 	"devDependencies": {
+		"callbag-pipe": "^1.1.1",
+		"callbag-to-iterable": "^1.0.0",
 		"stream-sink": "^2.0.0",
 		"is-stream": "^1.1.0"
 	},

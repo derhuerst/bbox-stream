@@ -50,6 +50,19 @@ coords([52.4, 13.4, 52.6, 13.6], .1)
 { lat: 52.6, lon: 13.6 }
 ```
 
+### [`callbag`](https://github.com/callbag/callbag#callbag-) interface
+
+```js
+const pipe = require('callbag-pipe')
+const coords = require('bbox-stream/callbag')
+const forEach = require('callbag-for-each')
+
+pipe(
+	coords([52.4, 13.4, 52.6, 13.6], .1),
+	forEach(console.log)
+)
+```
+
 
 ## Contributing
 

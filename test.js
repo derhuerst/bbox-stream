@@ -3,8 +3,11 @@
 const assert = require('assert')
 const sink = require('stream-sink')
 const isStream = require('is-stream')
+const pipe = require('callbag-pipe')
+const toIterable = require('callbag-to-iterable')
 
 const coords = require('.')
+const pullable = require('./callbag')
 const bbox = [52.5, 13.1, 52.7, 13.2]
 
 
@@ -38,3 +41,16 @@ coords(bbox, .01)
 	console.info('.01 passed')
 })
 .catch(assert.ifError)
+
+
+
+const values = pipe(pullable(bbox, .1), toIterable)
+assert.deepStrictEqual(Array.from(values), [
+	{lat: 52.5, lon: 13.1},
+	{lat: 52.6, lon: 13.1},
+	{lat: 52.7, lon: 13.1},
+	{lat: 52.5, lon: 13.2},
+	{lat: 52.6, lon: 13.2},
+	{lat: 52.7, lon: 13.2}
+])
+console.info('callbag passed')
