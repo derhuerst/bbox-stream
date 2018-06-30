@@ -13,6 +13,7 @@ coords([52.4, 13.4, 52.6, 13.6], .1).pipe(…)
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/bbox-stream.svg)](https://david-dm.org/derhuerst/bbox-stream#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/bbox-stream.svg)
 [![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
+[![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
 
 
 ## Installing

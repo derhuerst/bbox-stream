@@ -1,8 +1,8 @@
 {
-	"name":        "bbox-stream",
+	"name": "bbox-stream",
 	"description": "A stream of coordinates within a bounding box.",
-	"version":     "0.1.0",
-	"main":        "index.js",
+	"version": "0.1.0",
+	"main": "index.js",
 	"files": [
 		"index.js",
 		"callbag.js",
@@ -16,17 +16,19 @@
 		"map",
 		"callbag"
 	],
-	"author":      "Jannis R <mail@jannisr.de>",
-	"homepage":    "https://github.com/derhuerst/bbox-stream",
-	"repository":  "derhuerst/bbox-stream",
-	"bugs":        "https://github.com/derhuerst/bbox-stream/issues",
-	"license":     "ISC",
-	"engines":     {"node": ">= 6"},
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "https://github.com/derhuerst/bbox-stream",
+	"repository": "derhuerst/bbox-stream",
+	"bugs": "https://github.com/derhuerst/bbox-stream/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">= 6"
+	},
 	"devDependencies": {
 		"callbag-pipe": "^1.1.1",
 		"callbag-to-iterable": "^1.0.0",
-		"stream-sink": "^2.0.0",
-		"is-stream": "^1.1.0"
+		"is-stream": "^1.1.0",
+		"stream-sink": "^2.0.0"
 	},
 	"scripts": {
 		"test": "node test.js",
