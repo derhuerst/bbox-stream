@@ -27,7 +27,7 @@
 	"devDependencies": {
 		"callbag-pipe": "^1.1.1",
 		"callbag-to-iterable": "^1.0.0",
-		"is-stream": "^1.1.0",
+		"is-stream": "^2.0.0",
 		"stream-sink": "^2.0.0"
 	},
 	"scripts": {
