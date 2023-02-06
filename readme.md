@@ -1,11 +1,6 @@
 # bbox-stream
 
-**A stream of coordinates within a bounding box.**
-
-```js
-const coords = require('bbox-stream')
-coords([52.4, 13.4, 52.6, 13.6], .1).pipe(…)
-```
+**An [async iterable](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Iteration_protocols#the_async_iterator_and_async_iterable_protocols) of coordinates within a bounding box.**
 
 [![npm version](https://img.shields.io/npm/v/bbox-stream.svg)](https://www.npmjs.com/package/bbox-stream)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/bbox-stream.svg)
@@ -23,18 +18,15 @@ npm install bbox-stream
 
 ## Usage
 
-`coords(bbox, step)`
+*Note:* If you're looking for a [`stream.Readable`](https://nodejs.org/docs/latest-v18.x/api/stream.html#readable-streams): This package does not expose it anymore, but [since the Node.js `stream` APIs directly support (sync) iterables and async iterables](https://nodejs.org/docs/latest-v18.x/api/stream.html#streams-compatibility-with-async-generators-and-async-iterators), you likely won't need it.
 
-`bbox` must an array with 4 numbers, `minLat`, `minLon`, `maxLat`, `maxLon`. `step` must be a number.
-
-Returns a [readable stream](http://nodejs.org/api/stream.html#stream_class_stream_readable) [in object mode](https://nodejs.org/api/stream.html#stream_object_mode).
-
-### Example
+### async iterable interface
 
 ```js
-const coords = require('bbox-stream')
-coords([52.4, 13.4, 52.6, 13.6], .1)
-.on('data', console.log)
+const coordsIterable = require('bbox-stream')
+
+const it = coordsIterable([52.4, 13.4, 52.6, 13.6], .1)
+for await (const coords of it) console.log(coords)
 ```
 
 ```js
@@ -47,6 +39,25 @@ coords([52.4, 13.4, 52.6, 13.6], .1)
 { lat: 52.4, lon: 13.6 }
 { lat: 52.5, lon: 13.6 }
 { lat: 52.6, lon: 13.6 }
+```
+
+`bbox` must an array with 4 numbers, `minLat`, `minLon`, `maxLat`, `maxLon`. `step` must be a number.
+
+You can pipe the async iterable into a Node.js `stream.Writable` using `stream.pipeline()`:
+
+```js
+const {pipeline} = require('stream')
+
+pipeline(
+	it,
+	someWritableStream,
+	(err) => {
+		if (err) {
+			console.error(err)
+			process.exit(1)
+		}
+	}
+)
 ```
 
 ### [`callbag`](https://github.com/callbag/callbag#callbag-) interface

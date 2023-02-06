@@ -1,8 +1,6 @@
 'use strict'
 
-const assert = require('assert')
-const sink = require('stream-sink')
-const isStream = require('is-stream')
+const {strictEqual, deepStrictEqual} = require('assert')
 const pipe = require('callbag-pipe')
 const toIterable = require('callbag-to-iterable')
 
@@ -10,47 +8,48 @@ const coords = require('.')
 const pullable = require('./callbag')
 const bbox = [52.5, 13.1, 52.7, 13.2]
 
+;(async () => {
+	{
+		const it = coords(bbox, .1)
+		const data = []
+		for await (const c of it) data.push(c)
 
-
-assert(isStream(coords(bbox, .1)))
-console.info('isStream passed')
-
-coords(bbox, .1)
-.on('error', assert.ifError)
-.pipe(sink('object'))
-.then((data) => {
-	assert.deepStrictEqual(data, [
-		{lat: 52.5, lon: 13.1},
-		{lat: 52.6, lon: 13.1},
-		{lat: 52.7, lon: 13.1},
-		{lat: 52.5, lon: 13.2},
-		{lat: 52.6, lon: 13.2},
-		{lat: 52.7, lon: 13.2}
-	])
+		deepStrictEqual(data, [
+			{lat: 52.5, lon: 13.1},
+			{lat: 52.6, lon: 13.1},
+			{lat: 52.7, lon: 13.1},
+			{lat: 52.5, lon: 13.2},
+			{lat: 52.6, lon: 13.2},
+			{lat: 52.7, lon: 13.2}
+		])
+	}
 	console.info('.1 passed')
-})
-.catch(assert.ifError)
 
-coords(bbox, .01)
-.on('error', assert.ifError)
-.pipe(sink('object'))
-.then((data) => {
-	assert.deepStrictEqual(data[1], {lat: 52.51, lon: 13.1})
-	assert.deepStrictEqual(data[data.length - 2], {lat: 52.69, lon: 13.2})
-	assert.strictEqual(data.length, (20 + 1) * (10 + 1))
+	{
+		const it = coords(bbox, .01)
+		const data = []
+		for await (const c of it) data.push(c)
+
+		deepStrictEqual(data[1], {lat: 52.51, lon: 13.1})
+		deepStrictEqual(data[data.length - 2], {lat: 52.69, lon: 13.2})
+		strictEqual(data.length, (20 + 1) * (10 + 1))
+	}
 	console.info('.01 passed')
+
+	{
+		const values = pipe(pullable(bbox, .1), toIterable)
+		deepStrictEqual(Array.from(values), [
+			{lat: 52.5, lon: 13.1},
+			{lat: 52.6, lon: 13.1},
+			{lat: 52.7, lon: 13.1},
+			{lat: 52.5, lon: 13.2},
+			{lat: 52.6, lon: 13.2},
+			{lat: 52.7, lon: 13.2}
+		])
+	}
+	console.info('callbag passed')
+})()
+.catch((err) => {
+	console.error(err)
+	process.exit(1)
 })
-.catch(assert.ifError)
-
-
-
-const values = pipe(pullable(bbox, .1), toIterable)
-assert.deepStrictEqual(Array.from(values), [
-	{lat: 52.5, lon: 13.1},
-	{lat: 52.6, lon: 13.1},
-	{lat: 52.7, lon: 13.1},
-	{lat: 52.5, lon: 13.2},
-	{lat: 52.6, lon: 13.2},
-	{lat: 52.7, lon: 13.2}
-])
-console.info('callbag passed')
