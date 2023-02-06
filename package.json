@@ -1,7 +1,7 @@
 {
 	"name": "bbox-stream",
 	"description": "A stream of coordinates within a bounding box.",
-	"version": "1.0.1",
+	"version": "2.0.0",
 	"main": "index.js",
 	"files": [
 		"index.js",
@@ -26,10 +26,12 @@
 	},
 	"devDependencies": {
 		"callbag-pipe": "^1.1.1",
-		"callbag-to-iterable": "^1.0.0"
+		"callbag-to-iterable": "^1.0.0",
+		"eslint": "^8.33.0"
 	},
 	"scripts": {
+		"lint": "eslint .",
 		"test": "node test.js",
-		"prepublish": "npm test"
+		"prepublish": "npm run lint && npm test"
 	}
 }
