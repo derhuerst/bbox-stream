@@ -22,7 +22,7 @@
 	"bugs": "https://github.com/derhuerst/bbox-stream/issues",
 	"license": "ISC",
 	"engines": {
-		"node": ">= 6"
+		"node": ">=18"
 	},
 	"devDependencies": {
 		"callbag-pipe": "^1.1.1",
