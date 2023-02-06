@@ -1,7 +1,7 @@
 {
 	"name": "bbox-stream",
 	"description": "A stream of coordinates within a bounding box.",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"main": "index.js",
 	"files": [
 		"index.js",

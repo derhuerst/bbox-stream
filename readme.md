@@ -8,11 +8,10 @@ coords([52.4, 13.4, 52.6, 13.6], .1).pipe(…)
 ```
 
 [![npm version](https://img.shields.io/npm/v/bbox-stream.svg)](https://www.npmjs.com/package/bbox-stream)
-[![dependency status](https://img.shields.io/david/derhuerst/bbox-stream.svg)](https://david-dm.org/derhuerst/bbox-stream#info=dependencies)
-[![dev dependency status](https://img.shields.io/david/dev/derhuerst/bbox-stream.svg)](https://david-dm.org/derhuerst/bbox-stream#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/bbox-stream.svg)
-[![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
-[![support me on Patreon](https://img.shields.io/badge/support%20me-on%20patreon-fa7664.svg)](https://patreon.com/derhuerst)
+![minimum Node.js version](https://img.shields.io/node/v/bbox-stream.svg)
+[![support me via GitHub Sponsors](https://img.shields.io/badge/support%20me-donate-fa7664.svg)](https://github.com/sponsors/derhuerst)
+[![chat with me on Twitter](https://img.shields.io/badge/chat%20with%20me-on%20Twitter-1da1f2.svg)](https://twitter.com/derhuerst)
 
 
 ## Installing
