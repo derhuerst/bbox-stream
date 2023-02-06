@@ -8,7 +8,6 @@ coords([52.4, 13.4, 52.6, 13.6], .1).pipe(…)
 ```
 
 [![npm version](https://img.shields.io/npm/v/bbox-stream.svg)](https://www.npmjs.com/package/bbox-stream)
-[![build status](https://img.shields.io/travis/derhuerst/bbox-stream.svg)](https://travis-ci.org/derhuerst/bbox-stream)
 [![dependency status](https://img.shields.io/david/derhuerst/bbox-stream.svg)](https://david-dm.org/derhuerst/bbox-stream#info=dependencies)
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/bbox-stream.svg)](https://david-dm.org/derhuerst/bbox-stream#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/bbox-stream.svg)
